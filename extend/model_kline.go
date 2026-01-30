@@ -40,8 +40,8 @@ func (this *Kline) TotalValue() protocol.Price {
 type Klines []*Kline
 
 // REF 前n天
-func (this Klines) REF(n int) Klines {
-	return this[:len(this)-n]
+func (this Klines) REF(n int) *Kline {
+	return this[len(this)-n-1]
 }
 
 // HHV 近n天的最高价,同tdx公式命名
